@@ -6,7 +6,7 @@
 (*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2018/10/17 05:50:22 by sclolus           #+#    #+#             *)
-(*   Updated: 2018/10/17 08:54:49 by sclolus          ###   ########.fr       *)
+(*   Updated: 2018/10/19 03:00:38 by sclolus          ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -50,6 +50,8 @@ let () =
     let dataset = Parsing.parse_dataset in_channel in
     Dataset.print_dataset dataset ;
     print_endline "Now training on dataset" ;
-    let (t0, t1) = Linear_regression.train_on_dataset dataset 0.0001 in
+    let (t0, t1) = Linear_regression.train_on_dataset dataset 1e-12  in
     Printf.printf "Finished training: t0 = %f, t1 = %f\n" t0 t1 ;
-    Printf.printf "guess on 24000:3650 -> %f" (Linear_regression.guess_target 74000.0 t0 t1) ;
+    List.iter (fun (mileage, price) -> let prediction = (Linear_regression.guess_target mileage t0 t1) in
+                                       Printf.printf "guess on %f:%f -> %f\n" mileage price prediction) dataset
+
