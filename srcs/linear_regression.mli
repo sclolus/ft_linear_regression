@@ -12,3 +12,4 @@
 
 val train_on_dataset: Dataset.dataset -> float -> (float * float)
 val guess_target: float -> float -> float -> float
+val normalize_dataset: Dataset.dataset -> Dataset.dataset

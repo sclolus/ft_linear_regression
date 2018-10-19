@@ -23,7 +23,7 @@ ML_FILES = srcs/dataset.ml \
 MLI_FILES = $(foreach f, $(ML_FILES), $fi)
 
 SOURCES = $(MLI_FILES) $(ML_FILES) $(MAIN)
-GRAPHICS_LIB = 
+GRAPHICS_LIB = graphics
 LIBS= $(GRAPHICS_LIB) unix 
 # INCDIRS=$(shell ls -d `ocamlfind query camlimages -i-format  | cut -d ' ' -f 2`/**/) (* Fuck that shit *)
 

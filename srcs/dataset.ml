@@ -21,3 +21,7 @@ let print_dataset dataset =
     | [] -> ()
   in
   aux dataset
+
+(* let graph_dataset dataset =
+ *   Graphics.open_graph " 1920x1080" ; *)
+  
