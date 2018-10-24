@@ -1,14 +1,14 @@
-# **************************************************************************** #
+#******************************************************************************#
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jpriou <jpriou@student.42.fr>              +#+  +:+       +#+         #
+#    By: sclolus <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/07/20 17:42:24 by jpriou            #+#    #+#              #
-#    Updated: 2018/10/17 06:58:43 by sclolus          ###   ########.fr        #
+#    Created: 2018/10/25 00:32:18 by sclolus           #+#    #+#              #
+#    Updated: 2018/10/25 00:32:18 by sclolus          ###   ########.fr        #
 #                                                                              #
-# **************************************************************************** #
+#******************************************************************************#
 
 OCAMLMAKEFILE = OCamlMakefile
 
@@ -18,7 +18,8 @@ MAIN = srcs/train.ml
 
 ML_FILES = srcs/dataset.ml \
 			srcs/linear_regression.ml \
-			srcs/parsing.ml
+			srcs/parsing.ml \
+			srcs/graphical/graph.ml
 
 MLI_FILES = $(foreach f, $(ML_FILES), $fi)
 

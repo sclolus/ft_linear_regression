@@ -6,7 +6,7 @@
 (*   By: sclolus <marvin@42.fr>                     +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2018/10/17 05:50:22 by sclolus           #+#    #+#             *)
-(*   Updated: 2018/10/19 03:00:38 by sclolus          ###   ########.fr       *)
+(*   Updated: 2018/10/25 00:34:13 by sclolus          ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -54,4 +54,6 @@ let () =
     Printf.printf "Finished training: t0 = %f, t1 = %f\n" t0 t1 ;
     List.iter (fun (mileage, price) -> let prediction = (Linear_regression.guess_target mileage t0 t1) in
                                        Printf.printf "guess on %f:%f -> %f\n" mileage price prediction) (Linear_regression.normalize_dataset dataset)
-
+    ;
+      Graphics.open_graph " 720x720";
+      Graph.draw_dataset dataset
